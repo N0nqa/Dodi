@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Request</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #buttons button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">😊تعرفين اني احبك؟ و اني ما رضى تكونين زعلانه؟</div>
+    <div id="buttons">
+        <button onclick="acceptFriendship()">اي</button>
+        <button onclick="declineFriendship()">لا</button>
+    </div>
+    
+    <script>
+        let refusalCount = 0;
+        const faces = ["😊", "😠", "😡", "🤬"];
+
+        function acceptFriendship() {
+            window.location.href = "DNAheart.html";
+        }
+
+        function declineFriendship() {
+            refusalCount++;
+            let face = faces[Math.min(refusalCount, faces.length - 1)];
+            document.getElementById("message").innerHTML = `${face} تعرفين اني احبك؟ و اني ما رضى تكونين زعلانه؟`;
+        }
+    </script>
+</body>
+</html>
